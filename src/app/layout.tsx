@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-white text-[#2a3a4a]">
         <SmoothScroll />
         {children}
-        <Script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript" />
+
       </body>
     </html>
   );

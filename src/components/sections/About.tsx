@@ -1,8 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function About() {
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://platform.linkedin.com/badges/js/profile.js";
+        script.async = true;
+        script.defer = true;
+        script.type = "text/javascript";
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
     return (
         <section id="about" className="py-24 px-6 md:px-12 bg-off-white">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
@@ -51,9 +64,7 @@ export default function About() {
                     transition={{ delay: 0.5 }}
                     className="md:col-span-1 flex justify-center md:justify-end"
                 >
-                    <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="shashikathi" data-version="v1">
-                        <a className="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashikathi?trk=profile-badge">Shashi Kathi</a>
-                    </div>
+                    <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="shashikathi" data-version="v1"><a className="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashikathi?trk=profile-badge">Shashi Kathi</a></div>
                 </motion.div>
             </div>
         </section>
