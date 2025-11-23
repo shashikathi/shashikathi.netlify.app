@@ -93,7 +93,7 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
-                            className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                            className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 will-change-transform"
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-12">
                                 {/* Left side - Visual with actual project image */}
@@ -108,6 +108,7 @@ export default function Projects() {
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                                 className="object-cover"
                                             />
 

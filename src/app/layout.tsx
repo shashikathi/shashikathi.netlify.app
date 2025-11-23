@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${antonio.variable}`}>
+    <html lang="en" className={`${inter.variable} ${antonio.variable}`}>
       <body className="font-sans antialiased bg-white text-[#2a3a4a]">
         <Script
           src="https://platform.linkedin.com/badges/js/profile.js"

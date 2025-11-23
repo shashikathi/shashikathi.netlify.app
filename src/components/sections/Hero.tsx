@@ -177,13 +177,14 @@ export default function Hero() {
                         animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         whileHover={{ scale: 1.02, rotateY: 5 }}
-                        className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100 shadow-2xl"
+                        className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100 shadow-2xl will-change-transform"
                     >
                         <Image
                             src="/profile.png"
                             alt="Shashi Kathi"
                             fill
                             className="object-cover object-top"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                         />
                         <motion.div

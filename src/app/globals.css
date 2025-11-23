@@ -62,19 +62,20 @@ body {
 
 /* iOS-specific fixes */
 @supports (-webkit-touch-callout: none) {
+
   /* iOS Safari specific styles */
   body {
     /* Fix for iOS Safari address bar */
     height: -webkit-fill-available;
   }
-  
+
   /* Fix backdrop blur on iOS */
   .backdrop-blur-md,
   .backdrop-blur-xl {
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
   }
-  
+
   /* Prevent iOS from zooming on input focus */
   input[type="text"],
   input[type="email"],
@@ -84,20 +85,14 @@ body {
   select {
     font-size: 16px !important;
   }
-  
-  /* Fix for fixed positioning on iOS */
-  .fixed {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-  
+
   /* Improve touch targets on iOS */
   button,
   a,
   input,
   textarea,
   select {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     touch-action: manipulation;
   }
 }

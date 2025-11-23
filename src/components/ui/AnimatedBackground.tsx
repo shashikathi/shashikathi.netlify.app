@@ -31,7 +31,7 @@ export default function AnimatedBackground() {
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-3xl"
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-xl md:blur-3xl will-change-transform"
             />
             <motion.div
                 animate={{
@@ -44,7 +44,7 @@ export default function AnimatedBackground() {
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-dark-gray/10 to-transparent rounded-full blur-3xl"
+                className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-dark-gray/10 to-transparent rounded-full blur-xl md:blur-3xl will-change-transform"
             />
 
             {/* Floating particles - only render after client mount */}
@@ -61,7 +61,7 @@ export default function AnimatedBackground() {
                         repeat: Infinity,
                         delay: particle.delay,
                     }}
-                    className="absolute w-1 h-1 bg-accent/40 rounded-full"
+                    className="absolute w-1 h-1 bg-accent/40 rounded-full will-change-transform"
                     style={{
                         left: particle.left,
                         top: particle.top,

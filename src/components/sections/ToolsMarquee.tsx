@@ -55,7 +55,7 @@ export default function ToolsMarquee() {
                                 ease: "linear",
                             },
                         }}
-                        className="flex gap-6 flex-shrink-0"
+                        className="flex gap-6 flex-shrink-0 will-change-transform"
                     >
                         {[...tools, ...tools, ...tools].map((tool, index) => (
                             <motion.div
