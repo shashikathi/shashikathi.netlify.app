@@ -23,8 +23,19 @@ export default function Hero() {
             cursorY.set(e.clientY);
         };
 
+        const handleTouchMove = (e: TouchEvent) => {
+            if (e.touches.length > 0) {
+                cursorX.set(e.touches[0].clientX);
+                cursorY.set(e.touches[0].clientY);
+            }
+        };
+
         window.addEventListener("mousemove", handleMouseMove);
-        return () => window.removeEventListener("mousemove", handleMouseMove);
+        window.addEventListener("touchmove", handleTouchMove, { passive: true });
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("touchmove", handleTouchMove);
+        };
     }, [cursorX, cursorY]);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -33,6 +44,16 @@ export default function Hero() {
         const centerY = rect.top + rect.height / 2;
         mouseX.set((e.clientX - centerX) * 0.1);
         mouseY.set((e.clientY - centerY) * 0.1);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+        if (e.touches.length > 0) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            mouseX.set((e.touches[0].clientX - centerX) * 0.1);
+            mouseY.set((e.touches[0].clientY - centerY) * 0.1);
+        }
     };
 
     const containerVariants = {
@@ -60,7 +81,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-12 overflow-hidden">
+        <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-12 overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
             {/* Custom cursor follower */}
             <motion.div
                 className="fixed w-8 h-8 border-2 border-accent rounded-full pointer-events-none z-50 hidden md:block"
@@ -76,7 +97,12 @@ export default function Hero() {
                 <motion.div
                     className="order-2 lg:order-1 relative z-10"
                     onMouseMove={handleMouseMove}
+                    onTouchMove={handleTouchMove}
                     onMouseLeave={() => {
+                        mouseX.set(0);
+                        mouseY.set(0);
+                    }}
+                    onTouchEnd={() => {
                         mouseX.set(0);
                         mouseY.set(0);
                     }}

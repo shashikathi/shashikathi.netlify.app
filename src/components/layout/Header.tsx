@@ -22,9 +22,14 @@ export default function Header() {
         <motion.header
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            style={{ y: headerY }}
+            style={{
+                y: headerY,
+                top: `calc(1rem + env(safe-area-inset-top, 0px))`,
+                left: `calc(1rem + env(safe-area-inset-left, 0px))`,
+                right: `calc(1rem + env(safe-area-inset-right, 0px))`,
+            }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed top-4 left-4 right-4 md:left-12 md:right-12 z-50 flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-500 ${isScrolled
+            className={`fixed z-50 flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-500 ${isScrolled
                     ? "bg-white/70 backdrop-blur-xl shadow-2xl border border-gray-100"
                     : "bg-white/50 backdrop-blur-md shadow-lg"
                 }`}
@@ -70,7 +75,7 @@ export default function Header() {
 
             <Link
                 href="#contact"
-                className="group relative flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-to-r from-dark-gray to-accent text-white rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative flex items-center gap-2 px-3 md:px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-dark-gray to-accent text-white rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
             >
                 <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-accent to-dark-gray"
@@ -82,7 +87,8 @@ export default function Header() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                 </span>
-                <span className="relative z-10">Available for work</span>
+                <span className="relative z-10 hidden sm:inline">Available for work</span>
+                <span className="relative z-10 sm:hidden">Hire me</span>
             </Link>
         </motion.header>
     );

@@ -12,10 +12,92 @@
 :root {
   --background: #ffffff;
   --foreground: #303030;
+  /* iOS safe area insets */
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: env(safe-area-inset-left, 0px);
+}
+
+html {
+  /* Prevent iOS Safari from bouncing on scroll */
+  overscroll-behavior: none;
+  /* Fix for iOS viewport height issues */
+  height: -webkit-fill-available;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  /* Fix for iOS viewport height issues */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  /* Prevent text size adjustment on iOS */
+  -webkit-text-size-adjust: 100%;
+  /* Improve font rendering on iOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure LinkedIn badge is visible on all screen sizes */
+.LI-profile-badge {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 300px;
+}
+
+.LI-profile-badge iframe {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (min-width: 768px) {
+  .LI-profile-badge {
+    min-width: 280px;
+  }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific styles */
+  body {
+    /* Fix for iOS Safari address bar */
+    height: -webkit-fill-available;
+  }
+  
+  /* Fix backdrop blur on iOS */
+  .backdrop-blur-md,
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  
+  /* Prevent iOS from zooming on input focus */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+  
+  /* Fix for fixed positioning on iOS */
+  .fixed {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  
+  /* Improve touch targets on iOS */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+  }
 }

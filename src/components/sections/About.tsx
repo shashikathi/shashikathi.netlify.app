@@ -5,17 +5,54 @@ import { motion } from "framer-motion";
 
 export default function About() {
     useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://platform.linkedin.com/badges/js/profile.js";
-        script.async = true;
-        script.defer = true;
-        script.type = "text/javascript";
-        document.body.appendChild(script);
+        // Initialize LinkedIn badge after script loads
+        const initBadge = () => {
+            if (typeof window !== 'undefined' && window.IN && typeof window.IN.parse === 'function') {
+                // Parse the entire document to find and render badges
+                window.IN.parse(document);
+                
+                // Also try to parse just the badge container specifically
+                const badgeContainer = document.querySelector('.LI-profile-badge');
+                if (badgeContainer) {
+                    window.IN.parse(badgeContainer);
+                }
+            }
+        };
+
+        // Wait for script to load, then initialize
+        const checkAndInit = () => {
+            if (typeof window !== 'undefined' && window.IN && typeof window.IN.parse === 'function') {
+                initBadge();
+            } else {
+                // Retry after a short delay if script isn't ready yet
+                setTimeout(checkAndInit, 100);
+            }
+        };
+
+        // Start checking after component mounts
+        setTimeout(checkAndInit, 500);
+        
+        // Also re-initialize when the component comes into view (for desktop)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTimeout(checkAndInit, 200);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const badgeElement = document.querySelector('.LI-profile-badge');
+        if (badgeElement) {
+            observer.observe(badgeElement);
+        }
 
         return () => {
-            document.body.removeChild(script);
+            if (badgeElement) {
+                observer.unobserve(badgeElement);
+            }
         };
     }, []);
+
     return (
         <section id="about" className="py-24 px-6 md:px-12 bg-off-white">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
@@ -62,9 +99,25 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    className="md:col-span-1 flex justify-center md:justify-end"
+                    className="md:col-span-1 flex justify-center md:justify-end w-full md:w-auto"
                 >
-                    <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="shashikathi" data-version="v1"><a className="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashikathi?trk=profile-badge">Shashi Kathi</a></div>
+                    <div 
+                        className="badge-base LI-profile-badge w-full md:w-auto" 
+                        data-locale="en_US" 
+                        data-size="large" 
+                        data-theme="light" 
+                        data-type="VERTICAL" 
+                        data-vanity="shashikathi" 
+                        data-version="v1"
+                        style={{ minHeight: '300px', display: 'block' }}
+                    >
+                        <a 
+                            className="badge-base__link LI-simple-link" 
+                            href="https://in.linkedin.com/in/shashikathi?trk=profile-badge"
+                        >
+                            Shashi Kathi
+                        </a>
+                    </div>
                 </motion.div>
             </div>
         </section>

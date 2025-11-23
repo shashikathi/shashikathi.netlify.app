@@ -5,12 +5,22 @@ import Lenis from "lenis";
 
 export default function SmoothScroll() {
     useEffect(() => {
+        // Detect iOS devices
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        
+        // Disable smooth scroll on iOS as it conflicts with native momentum scrolling
+        if (isIOS) {
+            return;
+        }
+
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: "vertical",
             gestureOrientation: "vertical",
             smoothWheel: true,
+            touchMultiplier: 2,
         });
 
         function raf(time: number) {
