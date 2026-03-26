@@ -27,9 +27,9 @@ export default function Footer() {
                 </div>
 
                 <div className="flex gap-8 text-sm font-medium text-dark-gray">
-                    <Link href="https://www.linkedin.com/in/shashikathi/" target="_blank" className="hover:text-accent transition-colors">LinkedIn</Link>
-                    <Link href="https://github.com/shashikathi" target="_blank" className="hover:text-accent transition-colors">GitHub</Link>
-                    <Link href="https://infopreetham.netlify.app" target="_blank" className="hover:text-accent transition-colors">Portfolio</Link>
+                    <Link href="https://www.linkedin.com/in/shashikathi/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">LinkedIn</Link>
+                    <Link href="https://github.com/shashikathi" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">GitHub</Link>
+                    <Link href="https://infopreetham.netlify.app" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Portfolio</Link>
                 </div>
             </div>
 

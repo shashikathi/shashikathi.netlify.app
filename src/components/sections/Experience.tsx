@@ -33,6 +33,22 @@ export default function Experience() {
                                 <li>Developed reusable Python scripts for automation.</li>
                             </ul>
                         </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="border-l-2 border-gray-100 pl-8"
+                        >
+                            <h4 className="text-2xl font-bold text-dark-gray">Public Speaker → Senior Coordinator</h4>
+                            <p className="text-lg text-accent font-medium mb-2">OASIS Student Organization | Punjab, India</p>
+                            <p className="text-sm text-light-gray mb-4">Apr 2023 – Mar 2024</p>
+                            <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
+                                <li>Promoted to Senior Coordinator within 1 year — coordinated a cross-functional team of 15 members to execute 10+ events for 500+ participants, achieving 100% on-time delivery.</li>
+                                <li>Led team onboarding and induction for new members — managing role assignments, documentation, and participation programs to ensure smooth integration and sustained engagement.</li>
+                                <li>Established internal communication protocols and progress reporting systems — strengthening stakeholder alignment and proactively resolving team conflicts before escalation.</li>
+                                <li>Managed vendor coordination and logistics, optimizing resource allocation and improving operational efficiency by 25% through structured planning and follow-through.</li>
+                            </ul>
+                        </motion.div>
                     </div>
                 </div>
 

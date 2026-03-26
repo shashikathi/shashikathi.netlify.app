@@ -10,7 +10,9 @@ const projects = [
         id: 1,
         title: "Financial Fraud Detection System",
         category: "Machine Learning · Dashboard",
-        description: "End-to-end ML pipeline with interactive dashboard to detect financial fraud in real-time. Trained on real transaction data with LightGBM, featuring explainable AI and production-ready Streamlit deployment.",
+        problem: "Financial fraud costs millions and requires immediate detection.",
+        solution: "End-to-end ML pipeline with LightGBM and interactive Streamlit dashboard.",
+        outcome: "Achieved 98.4% accuracy with real-time explainable insights.",
         gradient: "bg-gradient-to-br from-emerald-50 to-teal-100",
         image: "/project-fraud.png",
         tech: ["Python", "LightGBM", "Plotly", "Streamlit"],
@@ -30,7 +32,9 @@ const projects = [
         id: 2,
         title: "Customer Churn Prediction",
         category: "Predictive Analytics · XGBoost",
-        description: "ML pipeline predicting telecom customer churn with class balancing using SMOTE. Features live deployment on Hugging Face Spaces for real-world business action.",
+        problem: "High customer turnover reduces revenue and profitability.",
+        solution: "Predictive pipeline with XGBoost, SMOTE balancing, and live Hugging Face deployment.",
+        outcome: "Identified at-risk customers with >85% accuracy for proactive retention.",
         gradient: "bg-gradient-to-br from-purple-50 to-indigo-100",
         image: "/project-churn.png",
         tech: ["Python", "XGBoost", "SMOTE", "Hugging Face"],
@@ -51,7 +55,9 @@ const projects = [
         id: 3,
         title: "Wine Quality Prediction",
         category: "Classification · Feature Engineering",
-        description: "Predicts wine quality based on physicochemical properties using Random Forest and Gradient Boosting. Identifies key factors affecting quality with comprehensive statistical analysis.",
+        problem: "Subjective quality assessment lacks consistency and scale.",
+        solution: "Random Forest model analyzing physicochemical properties.",
+        outcome: "Identified key quality drivers with 77% accuracy for objective rating.",
         gradient: "bg-gradient-to-br from-rose-50 to-orange-100",
         image: "/project-wine.png",
         tech: ["Python", "Random Forest", "Scikit-learn", "Seaborn"],
@@ -66,6 +72,28 @@ const projects = [
             "Statistical correlation analysis with visualizations",
         ],
         link: "https://github.com/shashikathi/Wine-Quality-Prediction"
+    },
+    {
+        id: 4,
+        title: "IBM HR Analytics — Employee Attrition Intelligence Dashboard",
+        category: "Power BI · Excel · Python",
+        problem: "Identify workforce attrition patterns and quantify cost impacts.",
+        solution: "Interactive Power BI dashboard analyzing 1,470 employee records.",
+        outcome: "Delivered 8 HR retention recommendations saving $6.8M–$27.2M annually.",
+        gradient: "bg-gradient-to-br from-blue-50 to-indigo-100",
+        image: "/project-hr.png",
+        tech: ["Power BI", "Excel", "Python"],
+        metrics: [
+            { label: "Records", value: "1,470" },
+            { label: "Impact", value: "$6.8M+" },
+            { label: "Variables", value: "35 HR" },
+        ],
+        highlights: [
+            "3-page interactive dashboard with demographic & job role filters",
+            "Identified at-risk employee segments in real time",
+            "ROI estimates for Year-1 onboarding & compensation benchmarking",
+        ],
+        link: "https://github.com/shashikathi/IBM-HR-Analytics-Employee-Attrition-Dashboard"
     },
 ];
 
@@ -98,7 +126,7 @@ export default function Projects() {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-12">
                                 {/* Left side - Visual with actual project image */}
                                 <div className="relative">
-                                    <Link href={project.link} target="_blank">
+                                    <Link href={project.link} target="_blank" rel="noopener noreferrer">
                                         <motion.div
                                             whileHover={{ scale: 1.02 }}
                                             transition={{ duration: 0.4 }}
@@ -156,9 +184,11 @@ export default function Projects() {
                                             <h3 className="text-2xl md:text-3xl font-bold text-dark-gray mt-2 mb-4 group-hover:text-accent transition-colors">
                                                 {project.title}
                                             </h3>
-                                            <p className="text-base text-light-gray leading-relaxed mb-6">
-                                                {project.description}
-                                            </p>
+                                            <div className="space-y-2 mb-6 text-base text-light-gray leading-relaxed">
+                                                <p><strong className="text-dark-gray">Problem:</strong> {project.problem}</p>
+                                                <p><strong className="text-dark-gray">Solution:</strong> {project.solution}</p>
+                                                <p><strong className="text-dark-gray">Outcome:</strong> {project.outcome}</p>
+                                            </div>
                                         </motion.div>
 
                                         {/* Highlights */}
@@ -199,6 +229,7 @@ export default function Projects() {
                                             <Link
                                                 href={project.link}
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-sm font-medium text-dark-gray hover:text-accent transition-colors"
                                             >
                                                 <ExternalLink className="w-4 h-4" />
@@ -208,6 +239,7 @@ export default function Projects() {
                                                 <Link
                                                     href={project.liveDemo}
                                                     target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="flex items-center gap-2 text-sm font-medium text-accent hover:text-dark-gray transition-colors"
                                                 >
                                                     <ArrowUpRight className="w-4 h-4" />

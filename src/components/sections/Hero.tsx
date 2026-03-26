@@ -2,41 +2,16 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Hero() {
     const [isHovered, setIsHovered] = useState(false);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
-    const cursorX = useMotionValue(0);
-    const cursorY = useMotionValue(0);
 
     const springConfig = { damping: 25, stiffness: 150 };
     const x = useSpring(mouseX, springConfig);
     const y = useSpring(mouseY, springConfig);
-    const cursorSpringX = useSpring(cursorX, { damping: 30, stiffness: 200 });
-    const cursorSpringY = useSpring(cursorY, { damping: 30, stiffness: 200 });
-
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            cursorX.set(e.clientX);
-            cursorY.set(e.clientY);
-        };
-
-        const handleTouchMove = (e: TouchEvent) => {
-            if (e.touches.length > 0) {
-                cursorX.set(e.touches[0].clientX);
-                cursorY.set(e.touches[0].clientY);
-            }
-        };
-
-        window.addEventListener("mousemove", handleMouseMove);
-        window.addEventListener("touchmove", handleTouchMove, { passive: true });
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-            window.removeEventListener("touchmove", handleTouchMove);
-        };
-    }, [cursorX, cursorY]);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -82,16 +57,7 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-12 overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
-            {/* Custom cursor follower */}
-            <motion.div
-                className="fixed w-8 h-8 border-2 border-accent rounded-full pointer-events-none z-50 hidden md:block"
-                style={{
-                    x: cursorSpringX,
-                    y: cursorSpringY,
-                    translateX: "-50%",
-                    translateY: "-50%",
-                }}
-            />
+
 
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <motion.div
@@ -151,6 +117,7 @@ export default function Hero() {
                         <motion.a
                             href="https://drive.google.com/drive/folders/1YvHlx6K3aNXhGODY2etrAIk6FUIamzpd"
                             target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 1 }}

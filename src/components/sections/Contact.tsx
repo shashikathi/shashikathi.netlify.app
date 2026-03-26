@@ -1,23 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission
-        console.log("Form submitted:", formData);
-    };
-
     return (
         <section id="contact" className="py-24 px-6 md:px-12 bg-gradient-to-br from-dark-gray to-accent relative overflow-hidden">
             {/* Animated background elements */}
@@ -96,83 +82,23 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    {/* Right side - Contact form */}
+                    {/* Right side - Calendar Embed */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20"
+                        className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 md:p-8 border border-white/20"
                     >
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
-                                    Your Name
-                                </label>
-                                <motion.input
-                                    whileFocus={{ scale: 1.02 }}
-                                    type="text"
-                                    id="name"
-                                    value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-white/40 transition-all text-base"
-                                    placeholder="John Doe"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
-                                    Your Email
-                                </label>
-                                <motion.input
-                                    whileFocus={{ scale: 1.02 }}
-                                    type="email"
-                                    id="email"
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-white/40 transition-all text-base"
-                                    placeholder="john@example.com"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
-                                    Your Message
-                                </label>
-                                <motion.textarea
-                                    whileFocus={{ scale: 1.02 }}
-                                    id="message"
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    rows={5}
-                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-white/40 transition-all resize-none text-base"
-                                    placeholder="Tell me about your project..."
-                                    required
-                                />
-                            </div>
-
-                            <motion.button
-                                type="submit"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onHoverStart={() => setIsHovered(true)}
-                                onHoverEnd={() => setIsHovered(false)}
-                                className="w-full relative px-6 py-4 bg-white text-dark-gray font-medium rounded-xl overflow-hidden group"
-                            >
-                                <motion.div
-                                    className="absolute inset-0 bg-accent"
-                                    initial={{ x: "-100%" }}
-                                    animate={{ x: isHovered ? 0 : "-100%" }}
-                                    transition={{ duration: 0.3 }}
-                                />
-                                <span className="relative z-10 flex items-center justify-center gap-2">
-                                    Send Message
-                                    <Send className="w-4 h-4" />
-                                </span>
-                            </motion.button>
-                        </form>
+                        <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-white/95 relative shadow-inner">
+                            <iframe 
+                                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31-XFOLaGNNnVWSDNfG3ZfeoMPTj4pOwp9V-cmhu4YQEynWtzf9m-e2Ok8EwElzEJjjk0yBhE0?gv=true" 
+                                style={{ border: 0 }} 
+                                width="100%" 
+                                height="100%" 
+                                frameBorder="0"
+                            />
+                        </div>
                     </motion.div>
                 </div>
             </div>

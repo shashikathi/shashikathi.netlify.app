@@ -75,7 +75,7 @@ export default function About() {
                         transition={{ delay: 0.2 }}
                         className="will-change-transform"
                     >
-                        I am a Data Analyst skilled in Python, SQL, and Power BI with experience in data cleaning, predictive modeling, and dashboard automation.
+                        I am a business-centric Data Analyst who bridges the gap between raw data and strategic decisions. My passion lies in solving complex problems—whether it's predicting customer churn or detecting fraud—to drive measurable efficiency and growth.
                     </motion.p>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ export default function About() {
                         transition={{ delay: 0.3 }}
                         className="will-change-transform"
                     >
-                        I hold a strong foundation in cloud-based ML workflows (Oracle Cloud Certified) with exposure to AI-driven analytics, LLM integration, and GCP/Azure environments.
+                        Beyond just technical skills in Python, SQL, and Power BI, I bring a focus on clarity, accuracy, and impact. I hold a strong foundation in cloud-based ML workflows and experience with AI-driven analytics.
                     </motion.p>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ export default function About() {
                         transition={{ delay: 0.4 }}
                         className="will-change-transform"
                     >
-                        My focus is on translating raw datasets into actionable business insights to enhance efficiency, forecasting accuracy, and decision-making.
+                        My goal is not just to analyze data, but to translate it into actionable business insights that enhance forecasting, optimize operations, and empower stakeholders to make confident decisions.
                     </motion.p>
                 </div>
 
