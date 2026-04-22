@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const antonio = Antonio({ subsets: ["latin"], variable: "--font-antonio" });
 
 export const metadata: Metadata = {
-  title: "Shashi Kathi | Data Analyst",
-  description: "Portfolio of Shashi Kathi, a Data Analyst specializing in Python, SQL, and Predictive Modeling.",
+  title: "Shashi Kathi | Operations & Analytics",
+  description: "Portfolio of Shashi Kathi, specializing in Operations, People Analytics, and AI-Driven Process Optimization.",
 };
 
 export const viewport: Viewport = {

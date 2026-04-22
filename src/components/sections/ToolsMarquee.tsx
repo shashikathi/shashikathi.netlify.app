@@ -54,7 +54,7 @@ export default function ToolsMarquee() {
                             x: {
                                 repeat: Infinity,
                                 repeatType: "loop",
-                                duration: 30,
+                                duration: 60,
                                 ease: "linear",
                             },
                         }}

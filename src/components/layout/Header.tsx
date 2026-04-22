@@ -30,8 +30,8 @@ export default function Header() {
             }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={`fixed z-50 flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-500 ${isScrolled
-                    ? "bg-white/70 backdrop-blur-xl shadow-2xl border border-gray-100"
-                    : "bg-white/50 backdrop-blur-md shadow-lg"
+                    ? "bg-white/80 backdrop-blur-[20px] shadow-sm border border-gray-100/50"
+                    : "bg-white/60 backdrop-blur-[12px] shadow-sm border border-transparent"
                 }`}
         >
             <Link href="/" className="text-xl font-bold tracking-tight uppercase font-heading">
@@ -75,7 +75,7 @@ export default function Header() {
 
             <Link
                 href="#contact"
-                className="group relative flex items-center gap-2 px-3 md:px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-dark-gray to-accent text-white rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative flex items-center gap-2 px-3 md:px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-b from-[#3a4a5a] to-dark-gray text-white rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-black/5"
             >
                 <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-accent to-dark-gray"

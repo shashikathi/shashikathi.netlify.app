@@ -27,11 +27,11 @@ export default function AnimatedBackground() {
                     scale: [1, 1.2, 1],
                 }}
                 transition={{
-                    duration: 20,
+                    duration: 30,
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-xl md:blur-3xl will-change-transform"
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-gray-100/60 to-transparent rounded-full blur-3xl will-change-transform"
             />
             <motion.div
                 animate={{
@@ -40,11 +40,11 @@ export default function AnimatedBackground() {
                     scale: [1, 1.3, 1],
                 }}
                 transition={{
-                    duration: 25,
+                    duration: 40,
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-dark-gray/10 to-transparent rounded-full blur-xl md:blur-3xl will-change-transform"
+                className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-gray-200/40 to-transparent rounded-full blur-3xl will-change-transform"
             />
 
             {/* Floating particles - only render after client mount */}

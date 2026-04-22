@@ -80,7 +80,7 @@ export default function Hero() {
                         animate="visible"
                         className="overflow-hidden"
                     >
-                        <motion.h1 className="text-[12vw] lg:text-[8vw] leading-[0.9] font-bold uppercase font-heading tracking-tighter text-dark-gray">
+                        <motion.h1 className="text-[12vw] lg:text-[7vw] leading-[0.95] font-semibold uppercase font-heading tracking-tight text-dark-gray/90">
                             {["S", "h", "a", "s", "h", "i"].map((letter, i) => (
                                 <motion.span
                                     key={`first-${i}`}
@@ -112,7 +112,7 @@ export default function Hero() {
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
                             className="text-xl md:text-2xl font-medium text-light-gray"
                         >
-                            Data Analyst
+                            Operations & Analytics
                         </motion.p>
                         <motion.a
                             href="https://drive.google.com/drive/folders/1YvHlx6K3aNXhGODY2etrAIk6FUIamzpd"
@@ -163,6 +163,22 @@ export default function Hero() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 1 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none"
+            >
+                <div className="w-[2px] h-16 bg-gray-100 overflow-hidden relative rounded-full">
+                    <motion.div
+                        animate={{ y: [0, 64, 0] }}
+                        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute top-0 left-0 bg-dark-gray/60 w-full h-1/2 rounded-full"
+                    />
+                </div>
+            </motion.div>
         </section>
     );
 }

@@ -8,73 +8,6 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 const projects = [
     {
         id: 1,
-        title: "Financial Fraud Detection System",
-        category: "Machine Learning · Dashboard",
-        problem: "Financial fraud costs millions and requires immediate detection.",
-        solution: "End-to-end ML pipeline with LightGBM and interactive Streamlit dashboard.",
-        outcome: "Achieved 98.4% accuracy with real-time explainable insights.",
-        gradient: "bg-gradient-to-br from-emerald-50 to-teal-100",
-        image: "/project-fraud.png",
-        tech: ["Python", "LightGBM", "Plotly", "Streamlit"],
-        metrics: [
-            { label: "Accuracy", value: "98.4%" },
-            { label: "Recall", value: "94.7%" },
-            { label: "ROC-AUC", value: "0.992" },
-        ],
-        highlights: [
-            "High recall focus — missing fraud costs millions",
-            "Interactive animated Plotly dashboards",
-            "Explainable AI with feature importance insights",
-        ],
-        link: "https://github.com/shashikathi/financial-fraud-detection-ml"
-    },
-    {
-        id: 2,
-        title: "Customer Churn Prediction",
-        category: "Predictive Analytics · XGBoost",
-        problem: "High customer turnover reduces revenue and profitability.",
-        solution: "Predictive pipeline with XGBoost, SMOTE balancing, and live Hugging Face deployment.",
-        outcome: "Identified at-risk customers with >85% accuracy for proactive retention.",
-        gradient: "bg-gradient-to-br from-purple-50 to-indigo-100",
-        image: "/project-churn.png",
-        tech: ["Python", "XGBoost", "SMOTE", "Hugging Face"],
-        metrics: [
-            { label: "Accuracy", value: "85%+" },
-            { label: "Model", value: "XGBoost" },
-            { label: "Status", value: "Live Demo" },
-        ],
-        highlights: [
-            "Live deployment on Hugging Face Spaces",
-            "Class balancing with SMOTE technique",
-            "Comprehensive visualizations for business insights",
-        ],
-        link: "https://github.com/shashikathi/Customer-Churn-Analysis-Prediction",
-        liveDemo: "https://huggingface.co/spaces/shashikathi56/customer-churn-predictor"
-    },
-    {
-        id: 3,
-        title: "Wine Quality Prediction",
-        category: "Classification · Feature Engineering",
-        problem: "Subjective quality assessment lacks consistency and scale.",
-        solution: "Random Forest model analyzing physicochemical properties.",
-        outcome: "Identified key quality drivers with 77% accuracy for objective rating.",
-        gradient: "bg-gradient-to-br from-rose-50 to-orange-100",
-        image: "/project-wine.png",
-        tech: ["Python", "Random Forest", "Scikit-learn", "Seaborn"],
-        metrics: [
-            { label: "Accuracy", value: "77.1%" },
-            { label: "Model", value: "Random Forest" },
-            { label: "Features", value: "11 Chemical" },
-        ],
-        highlights: [
-            "Alcohol content & volatile acidity as key predictors",
-            "Best performance on medium-quality wines (5-6)",
-            "Statistical correlation analysis with visualizations",
-        ],
-        link: "https://github.com/shashikathi/Wine-Quality-Prediction"
-    },
-    {
-        id: 4,
         title: "IBM HR Analytics — Employee Attrition Intelligence Dashboard",
         category: "Power BI · Excel · Python",
         problem: "Identify workforce attrition patterns and quantify cost impacts.",
@@ -95,6 +28,51 @@ const projects = [
         ],
         link: "https://github.com/shashikathi/IBM-HR-Analytics-Employee-Attrition-Dashboard"
     },
+    {
+        id: 2,
+        title: "Financial Fraud Detection",
+        category: "Predictive Analytics · Machine Learning",
+        problem: "Financial fraud incidents require high-precision real-time detection models.",
+        solution: "Built a robust Machine Learning model using XGBoost to classify fraudulent transactions.",
+        outcome: "Achieved high precision and recall on heavily imbalanced datasets.",
+        gradient: "bg-gradient-to-br from-purple-50 to-indigo-100",
+        image: "/project-fraud.png",
+        tech: ["Python", "Scikit-learn", "XGBoost", "Pandas"],
+        metrics: [
+            { label: "Precision", value: "High" },
+            { label: "Model", value: "XGBoost" },
+            { label: "Scale", value: "Large" },
+        ],
+        highlights: [
+            "Handled highly imbalanced financial datasets efficiently",
+            "Deployed evaluation workflows using precision-recall curves",
+            "Optimized tree-based models for high recall of fraudulent claims",
+        ],
+        link: "https://github.com/shashikathi/financial-fraud-detection-ml"
+    },
+    {
+        id: 3,
+        title: "Customer Churn Prediction",
+        category: "Predictive Analytics · XGBoost",
+        problem: "High customer turnover reduces revenue and profitability.",
+        solution: "Predictive pipeline with XGBoost, SMOTE balancing, and live Hugging Face deployment.",
+        outcome: "Identified at-risk customers with >85% accuracy for proactive retention.",
+        gradient: "bg-gradient-to-br from-emerald-50 to-teal-100",
+        image: "/project-churn.png",
+        tech: ["Python", "XGBoost", "SMOTE", "Hugging Face"],
+        metrics: [
+            { label: "Accuracy", value: "85%+" },
+            { label: "Model", value: "XGBoost" },
+            { label: "Status", value: "Live Demo" },
+        ],
+        highlights: [
+            "Live deployment on Hugging Face Spaces",
+            "Class balancing with SMOTE technique",
+            "Comprehensive visualizations for business insights",
+        ],
+        link: "https://github.com/shashikathi/Customer-Churn-Analysis-Prediction",
+        liveDemo: "https://huggingface.co/spaces/shashikathi56/customer-churn-predictor"
+    }
 ];
 
 export default function Projects() {
@@ -136,6 +114,8 @@ export default function Projects() {
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
+                                                priority={index === 0}
+                                                quality={90}
                                                 sizes="(max-width: 768px) 100vw, 50vw"
                                                 className="object-cover"
                                             />

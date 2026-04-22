@@ -23,14 +23,13 @@ export default function Experience() {
                             viewport={{ once: true }}
                             className="border-l-2 border-gray-100 pl-8"
                         >
-                            <h4 className="text-2xl font-bold text-dark-gray">Data Science Research Intern</h4>
-                            <p className="text-lg text-accent font-medium mb-2">TransOrg Analytics | Remote</p>
-                            <p className="text-sm text-light-gray mb-4">Jan 2025 – June 2025</p>
+                            <h4 className="text-2xl font-bold text-dark-gray">Operations Associate</h4>
+                            <p className="text-lg text-accent font-medium mb-2">Bhanzu</p>
+                            <p className="text-sm text-light-gray mb-4">Apr 2026 – Present</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Cleaned and validated over 10,000 customer records.</li>
-                                <li>Built automated ETL pipelines using Python & SQL (30% faster reporting).</li>
-                                <li>Performed EDA to identify outliers and missing values.</li>
-                                <li>Developed reusable Python scripts for automation.</li>
+                                <li>Spearheading data-driven operational strategies, bridging the gap between business objectives and cross-functional execution pipelines.</li>
+                                <li>Monitoring and analyzing key operational metrics to streamline workflows, optimize resource allocation, and enhance reporting efficiency.</li>
+                                <li>Collaborating across teams to identify process bottlenecks, implementing automated solutions to maintain high data hygiene and accelerate task delivery.</li>
                             </ul>
                         </motion.div>
                         <motion.div
@@ -39,14 +38,29 @@ export default function Experience() {
                             viewport={{ once: true }}
                             className="border-l-2 border-gray-100 pl-8"
                         >
-                            <h4 className="text-2xl font-bold text-dark-gray">Public Speaker → Senior Coordinator</h4>
+                            <h4 className="text-2xl font-bold text-dark-gray">Data Science Research Intern</h4>
+                            <p className="text-lg text-accent font-medium mb-2">TransOrg Analytics | Remote</p>
+                            <p className="text-sm text-light-gray mb-4">Jan 2025 – June 2025</p>
+                            <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
+                                <li>Built scalable Python/SQL ETL pipelines processing 10,000+ records, accelerating operational reporting speed by 30%.</li>
+                                <li>Engineered Machine Learning models for churn prediction and fraud detection, delivering actionable predictive insights.</li>
+                                <li>Executed comprehensive Exploratory Data Analysis (EDA) and data cleaning, enhancing data quality for downstream processes.</li>
+                                <li>Designed dynamic performance dashboards using Power BI and Looker Studio to visualize KPIs for stakeholder decision-making.</li>
+                            </ul>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="border-l-2 border-gray-100 pl-8"
+                        >
+                            <h4 className="text-2xl font-bold text-dark-gray">Senior Coordinator</h4>
                             <p className="text-lg text-accent font-medium mb-2">OASIS Student Organization | Punjab, India</p>
                             <p className="text-sm text-light-gray mb-4">Apr 2023 – Mar 2024</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Promoted to Senior Coordinator within 1 year — coordinated a cross-functional team of 15 members to execute 10+ events for 500+ participants, achieving 100% on-time delivery.</li>
-                                <li>Led team onboarding and induction for new members — managing role assignments, documentation, and participation programs to ensure smooth integration and sustained engagement.</li>
-                                <li>Established internal communication protocols and progress reporting systems — strengthening stakeholder alignment and proactively resolving team conflicts before escalation.</li>
-                                <li>Managed vendor coordination and logistics, optimizing resource allocation and improving operational efficiency by 25% through structured planning and follow-through.</li>
+                                <li>Directed a cross-functional team of 15 members to successfully execute 10+ events for 500+ participants, achieving 100% on-time delivery.</li>
+                                <li>Managed vendor coordination, logistics, and internal protocols, improving overall operational efficiency by 25%.</li>
+                                <li>Led team onboarding and induction, accelerating ramp-up time via standardized role assignments and Standard Operating Procedures (SOPs).</li>
                             </ul>
                         </motion.div>
                     </div>
@@ -90,9 +104,10 @@ export default function Experience() {
                     </motion.h3>
                     <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {[
-                            "Oracle Cloud Infrastructure 2025 Data Science Professional",
-                            "Google Cloud: Introduction to Data Analytics",
-                            "Google: Looker Studio",
+                            "McKinsey Forward Program | McKinsey & Company",
+                            "Oracle Cloud Infrastructure 2025 Data Science Professional | Oracle",
+                            "Looker Studio Certification | Google",
+                            "Google Cloud: Introduction to Data Analytics | Google",
                         ].map((cert, index) => (
                             <motion.div
                                 key={index}
