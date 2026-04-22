@@ -5,7 +5,36 @@ import { motion } from "framer-motion";
 
 export default function About() {
     useEffect(() => {
-        // No strict mount animations needed, fully declarative Framer Motion handles it
+        const initBadge = () => {
+            if (typeof window !== 'undefined' && window.IN && typeof window.IN.parse === 'function') {
+                window.IN.parse(document);
+                const badgeContainer = document.querySelector('.LI-profile-badge');
+                if (badgeContainer) window.IN.parse(badgeContainer);
+            }
+        };
+
+        const checkAndInit = () => {
+            if (typeof window !== 'undefined' && window.IN && typeof window.IN.parse === 'function') {
+                initBadge();
+            } else {
+                setTimeout(checkAndInit, 100);
+            }
+        };
+
+        setTimeout(checkAndInit, 500);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) setTimeout(checkAndInit, 200);
+            });
+        }, { threshold: 0.1 });
+
+        const badgeElement = document.querySelector('.LI-profile-badge');
+        if (badgeElement) observer.observe(badgeElement);
+
+        return () => {
+            if (badgeElement) observer.unobserve(badgeElement);
+        };
     }, []);
 
     return (
@@ -50,38 +79,19 @@ export default function About() {
                     </motion.p>
                 </div>
 
-                <motion.a
-                    href="https://in.linkedin.com/in/shashikathi"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    whileHover={{ scale: 1.02 }}
-                    className="md:col-span-1 block w-full max-w-sm mx-auto md:ml-auto p-6 rounded-3xl bg-white/50 backdrop-blur-xl border border-gray-100 shadow-sm hover:shadow-md transition-all group will-change-transform"
+                    className="md:col-span-1 flex justify-center md:justify-end w-full md:w-auto will-change-transform"
                 >
-                    <div className="flex items-center gap-4 mb-4">
-                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-sm shrink-0">
-                            <img src="/profile.png" alt="Shashi Kathi" className="w-full h-full object-cover object-top" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-dark-gray leading-tight">Shashi Kathi</h3>
-                            <p className="text-sm text-light-gray mt-1">Operations & Analytics</p>
-                        </div>
+                    <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="shashikathi" data-version="v1" style={{ display: 'block' }}>
+                        <a className="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashikathi?trk=profile-badge">
+                            Shashi Kathi
+                        </a>
                     </div>
-                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-                        <span className="text-sm font-semibold text-accent flex items-center gap-2">
-                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                            Connect
-                        </span>
-                        <svg className="w-5 h-5 text-gray-300 group-hover:text-accent group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                </motion.a>
+                </motion.div>
             </div>
         </section>
     );
