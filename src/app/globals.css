@@ -98,3 +98,14 @@ body {
     touch-action: manipulation;
   }
 }
+
+/* ── LinkedIn Badge: prevent iframe from stretching mobile layout ── */
+.LI-profile-badge {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+.LI-profile-badge iframe,
+.LI-profile-badge .LI-badge-container {
+  max-width: 100% !important;
+  width: 100% !important;
+}

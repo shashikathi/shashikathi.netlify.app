@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useId, useState } from "react";
-import LinkedInCard from "../ui/LinkedInCard";
+import LinkedInBadge from "../ui/LinkedInBadge";
 
 const preview =
     "I'm Shashi, an Operations Associate at Bhanzu with a B.Tech (Hons) in Data Science. I use Python, SQL, and Power BI to turn operational challenges into clear, actionable insights.";
@@ -91,7 +91,7 @@ export default function About() {
                     transition={{ delay: 0.5 }}
                     className="md:col-span-1 flex justify-center md:justify-end w-full md:w-auto will-change-transform"
                 >
-                    <LinkedInCard />
+                    <LinkedInBadge />
                 </motion.div>
             </div>
         </section>
