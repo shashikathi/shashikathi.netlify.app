@@ -40,7 +40,7 @@ export default function Contact() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-6xl font-bold font-heading uppercase text-white mb-6"
                         >
-                            Let's Work
+                            Let&apos;s Work
                             <br />
                             Together
                         </motion.h2>
@@ -52,7 +52,7 @@ export default function Contact() {
                             transition={{ delay: 0.2 }}
                             className="text-lg text-white/80 mb-12"
                         >
-                            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                         </motion.p>
 
                         <div className="space-y-6">
@@ -74,7 +74,7 @@ export default function Contact() {
                                         <item.icon className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <p className="text-sm text-white/60">{item.label}</p>
+                                        <p className="text-sm text-white/85">{item.label}</p>
                                         <p className="font-medium">{item.value}</p>
                                     </div>
                                 </motion.a>

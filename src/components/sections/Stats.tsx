@@ -83,7 +83,7 @@ export default function Stats() {
                                     {stat.suffix}
                                 </motion.div>
                                 <p className="text-sm text-light-gray font-medium">{stat.label}</p>
-                                <p className="text-xs text-light-gray/70 mt-1 px-4">{stat.description}</p>
+                                <p className="text-xs text-light-gray mt-1 px-4">{stat.description}</p>
                             </div>
 
                             {/* Corner decoration */}

@@ -1,22 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+
+// Deterministic particle generation (fixed seed) so SSR + hydration match,
+// avoiding Math.random() during render and setState inside effects.
+const generateParticles = (count: number, seed: number) => {
+    let s = seed;
+    const rand = () => {
+        s = (s * 9301 + 49297) % 233280;
+        return s / 233280;
+    };
+    return [...Array(count)].map(() => ({
+        left: `${rand() * 100}%`,
+        top: `${rand() * 100}%`,
+        delay: rand() * 2,
+        duration: 3 + rand() * 2,
+        dx: rand() * 20 - 10,
+    }));
+};
+
+const particles = generateParticles(20, 42);
 
 export default function AnimatedBackground() {
-    const [particles, setParticles] = useState<Array<{ left: string; top: string; delay: number; duration: number }>>([]);
-
-    useEffect(() => {
-        // Generate particles only on client side to avoid hydration mismatch
-        const generatedParticles = [...Array(20)].map(() => ({
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            delay: Math.random() * 2,
-            duration: 3 + Math.random() * 2,
-        }));
-        setParticles(generatedParticles);
-    }, []);
-
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
             {/* Gradient orbs */}
@@ -47,13 +52,13 @@ export default function AnimatedBackground() {
                 className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-gray-200/40 to-transparent rounded-full blur-3xl will-change-transform"
             />
 
-            {/* Floating particles - only render after client mount */}
+            {/* Floating particles */}
             {particles.map((particle, i) => (
                 <motion.div
                     key={i}
                     animate={{
                         y: [0, -30, 0],
-                        x: [0, Math.random() * 20 - 10, 0],
+                        x: [0, particle.dx, 0],
                         opacity: [0.3, 0.6, 0.3],
                     }}
                     transition={{

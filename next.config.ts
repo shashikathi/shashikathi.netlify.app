@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   images: {
     unoptimized: true, // Required for Netlify static export
+    qualities: [75, 90],
   },
   output: 'export',
 };

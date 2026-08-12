@@ -1,44 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { useId, useState } from "react";
+import LinkedInCard from "../ui/LinkedInCard";
+
+const preview =
+    "I'm Shashi, an Operations Associate at Bhanzu with a B.Tech (Hons) in Data Science. I use Python, SQL, and Power BI to turn operational challenges into clear, actionable insights.";
+
+const moreContent = [
+    "My work spans HR analytics, fraud detection, and business process optimization — always grounded in real metrics. I've built ETL pipelines, ML models, and KPI dashboards that teams rely on for faster, data-backed decisions.",
+    "Beyond the dashboards, I care about the outcome: less manual reporting, fewer bottlenecks, and operations that scale. That's what I look for in every project.",
+];
 
 export default function About() {
-    useEffect(() => {
-        const initBadge = () => {
-            if (typeof window !== 'undefined' && window.IN && typeof window.IN.parse === 'function') {
-                window.IN.parse(document);
-                const badgeContainer = document.querySelector('.LI-profile-badge');
-                if (badgeContainer) window.IN.parse(badgeContainer);
-            }
-        };
+    const [isExpanded, setIsExpanded] = useState(false);
+    const contentId = useId();
+    const shouldReduceMotion = useReducedMotion();
 
-        const checkAndInit = () => {
-            if (typeof window !== 'undefined' && window.IN && typeof window.IN.parse === 'function') {
-                initBadge();
-            } else {
-                setTimeout(checkAndInit, 100);
-            }
-        };
-
-        setTimeout(checkAndInit, 500);
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) setTimeout(checkAndInit, 200);
-            });
-        }, { threshold: 0.1 });
-
-        const badgeElement = document.querySelector('.LI-profile-badge');
-        if (badgeElement) observer.observe(badgeElement);
-
-        return () => {
-            if (badgeElement) observer.unobserve(badgeElement);
-        };
-    }, []);
+    const toggle = () => setIsExpanded((prev) => !prev);
 
     return (
-        <section id="about" className="py-24 px-6 md:px-12 bg-off-white">
+        <section id="about" className="py-24 px-6 md:px-12 bg-off-white overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -49,34 +32,56 @@ export default function About() {
                     About Me
                 </motion.h2>
 
-                <div className="space-y-8 text-lg md:text-xl text-dark-gray leading-relaxed md:col-span-1 max-w-[650px]">
-                    <motion.p
+                <div className="md:col-span-1 max-w-[650px]">
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                         className="will-change-transform"
                     >
-                        I am an Operations & Analytics professional who bridges the gap between raw data, people, and strategic decisions. My passion lies in solving complex operational bottlenecks—whether it's optimizing resource allocation or building AI-driven process automation—to drive measurable efficiency and growth.
-                    </motion.p>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="will-change-transform"
-                    >
-                        Beyond just technical skills in Python, SQL, and Power BI, I bring a focus on clarity, accuracy, and impact. I hold a strong foundation in cloud-based ML workflows and experience with AI-driven analytics.
-                    </motion.p>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                        className="will-change-transform"
-                    >
-                        My goal is not just to analyze data, but to translate it into actionable business insights that enhance forecasting, optimize operations, and empower stakeholders to make confident decisions.
-                    </motion.p>
+                        <p className="text-lg md:text-xl text-dark-gray leading-relaxed line-clamp-3">
+                            {preview}
+                        </p>
+
+                        <motion.div
+                            id={contentId}
+                            initial={false}
+                            animate={{
+                                height: isExpanded ? "auto" : 0,
+                                opacity: isExpanded ? 1 : 0,
+                            }}
+                            transition={{
+                                height: { duration: shouldReduceMotion ? 0 : 0.35, ease: "easeInOut" },
+                                opacity: { duration: shouldReduceMotion ? 0 : 0.25 },
+                            }}
+                            className="overflow-hidden"
+                            aria-hidden={!isExpanded}
+                        >
+                            <div className="space-y-5 pt-5">
+                                {moreContent.map((text, i) => (
+                                    <p key={i} className="text-lg md:text-xl text-dark-gray leading-relaxed">
+                                        {text}
+                                    </p>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        <motion.button
+                            type="button"
+                            onClick={toggle}
+                            aria-expanded={isExpanded}
+                            aria-controls={contentId}
+                            whileTap={{ scale: 0.98 }}
+                            className="mt-6 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent hover:text-dark-gray focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-full transition-colors duration-300"
+                        >
+                            {isExpanded ? "Show Less" : "Read More"}
+                            <ChevronDown
+                                className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+                                aria-hidden="true"
+                            />
+                        </motion.button>
+                    </motion.div>
                 </div>
 
                 <motion.div
@@ -86,11 +91,7 @@ export default function About() {
                     transition={{ delay: 0.5 }}
                     className="md:col-span-1 flex justify-center md:justify-end w-full md:w-auto will-change-transform"
                 >
-                    <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="shashikathi" data-version="v1" style={{ display: 'block' }}>
-                        <a className="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashikathi?trk=profile-badge">
-                            Shashi Kathi
-                        </a>
-                    </div>
+                    <LinkedInCard />
                 </motion.div>
             </div>
         </section>
