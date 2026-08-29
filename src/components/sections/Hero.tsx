@@ -112,7 +112,7 @@ export default function Hero() {
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
                             className="text-xl md:text-2xl font-medium text-light-gray"
                         >
-                            Operations & Analytics
+                            Operations Associate Analyst
                         </motion.p>
                         <motion.a
                             href="https://drive.google.com/drive/folders/1YvHlx6K3aNXhGODY2etrAIk6FUIamzpd"

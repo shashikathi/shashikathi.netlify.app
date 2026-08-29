@@ -10,7 +10,7 @@ export default function Footer() {
                     <Link href="/" className="text-lg font-bold tracking-tight uppercase font-heading text-dark-gray">
                         Shashi Kathi
                     </Link>
-                    <p className="text-xs text-light-gray mt-1">Operations & Analytics Portfolio</p>
+                    <p className="text-xs text-light-gray mt-1">Operations Associate Analyst — Portfolio</p>
                 </div>
 
                 <div className="flex gap-8 text-sm font-medium text-dark-gray">

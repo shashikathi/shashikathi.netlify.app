@@ -30,28 +30,6 @@ const projects = [
     },
     {
         id: 2,
-        title: "Financial Fraud Detection",
-        category: "Predictive Analytics · Machine Learning",
-        problem: "Financial fraud incidents cause significant loss, requiring real-time, low-latency ML detection models.",
-        solution: "Engineered an XGBoost classification pipeline with SMOTE resampling and hyperparameter optimization.",
-        outcome: "Achieved 99.2% precision and 0.94 F1-score on imbalanced credit card transaction datasets.",
-        gradient: "bg-gradient-to-br from-purple-50 to-indigo-100",
-        image: "/project-fraud.png",
-        tech: ["Python", "Scikit-learn", "XGBoost", "Pandas"],
-        metrics: [
-            { label: "Precision", value: "99.2%" },
-            { label: "F1-Score", value: "0.94" },
-            { label: "Scale", value: "284k+ Tx" },
-        ],
-        highlights: [
-            "Addressed extreme class imbalance (0.17% fraud rate) using SMOTE and threshold tuning",
-            "Developed evaluation workflows utilizing Precision-Recall Curves (AUPRC) and ROC curves",
-            "Optimized inference parameters for high recall without inflating false alarm rates",
-        ],
-        link: "https://github.com/shashikathi/financial-fraud-detection-ml"
-    },
-    {
-        id: 3,
         title: "Customer Churn Prediction",
         category: "Predictive Analytics · XGBoost",
         problem: "High customer turnover reduces revenue and profitability.",
@@ -72,6 +50,28 @@ const projects = [
         ],
         link: "https://github.com/shashikathi/Customer-Churn-Analysis-Prediction",
         liveDemo: "https://huggingface.co/spaces/shashikathi56/customer-churn-predictor"
+    },
+    {
+        id: 3,
+        title: "Financial Fraud Detection",
+        category: "Predictive Analytics · Machine Learning",
+        problem: "Fraudulent transactions cause real loss and need fast, accurate detection.",
+        solution: "Built an XGBoost classification pipeline with careful handling of imbalanced data and tuned detection thresholds.",
+        outcome: "Achieved 99.2% precision and 0.94 F1-score, keeping false alarms low so teams only chase real cases.",
+        gradient: "bg-gradient-to-br from-purple-50 to-indigo-100",
+        image: "/project-fraud.png",
+        tech: ["Python", "Scikit-learn", "XGBoost", "Pandas"],
+        metrics: [
+            { label: "Precision", value: "99.2%" },
+            { label: "F1-Score", value: "0.94" },
+            { label: "Scale", value: "284k+ Tx" },
+        ],
+        highlights: [
+            "Handled extreme class imbalance (0.17% fraud rate) to keep detection accurate",
+            "Tuned thresholds to balance catching fraud with avoiding false alarms",
+            "Evaluated using Precision-Recall and ROC curves for reliable results",
+        ],
+        link: "https://github.com/shashikathi/financial-fraud-detection-ml"
     }
 ];
 

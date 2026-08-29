@@ -7,15 +7,15 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const antonio = Antonio({ subsets: ["latin"], variable: "--font-antonio" });
 
 export const metadata: Metadata = {
-  title: "Shashi Kathi | Operations & Analytics",
-  description: "Portfolio of Shashi Kathi, specializing in Operations, People Analytics, and AI-Driven Process Optimization.",
+  title: "Shashi Kathi | Operations Associate Analyst",
+  description: "Operations Associate Analyst at Bhanzu. Skilled in data management, Excel-based reporting, KPI tracking, and cross-functional coordination in EdTech.",
   metadataBase: new URL("https://shashikathi.netlify.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Shashi Kathi | Operations & Analytics",
-    description: "Portfolio of Shashi Kathi, specializing in Operations, People Analytics, and AI-Driven Process Optimization.",
+    title: "Shashi Kathi | Operations Associate Analyst",
+    description: "Operations Associate Analyst at Bhanzu. Skilled in data management, Excel-based reporting, KPI tracking, and cross-functional coordination in EdTech.",
     url: "https://shashikathi.netlify.app",
     siteName: "Shashi Kathi Portfolio",
     images: [
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shashi Kathi | Operations & Analytics",
-    description: "Portfolio of Shashi Kathi, specializing in Operations, People Analytics, and AI-Driven Process Optimization.",
+    title: "Shashi Kathi | Operations Associate Analyst",
+    description: "Operations Associate Analyst at Bhanzu. Skilled in data management, Excel-based reporting, KPI tracking, and cross-functional coordination in EdTech.",
     images: ["/profile.png"],
   },
 };

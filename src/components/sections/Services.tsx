@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const skills = [
-    { id: "01.", title: "Languages & Libraries", description: "Python (Pandas, NumPy, Scikit-learn), SQL, R", icon: "💻" },
-    { id: "02.", title: "Data Visualization", description: "Power BI, Tableau, Looker Studio, Matplotlib, Seaborn", icon: "📊" },
-    { id: "03.", title: "Cloud & AI", description: "Azure AI, GCP Vertex AI, Oracle Cloud, OpenAI APIs", icon: "☁️" },
-    { id: "04.", title: "Data Engineering", description: "ETL Pipelines, Data Cleaning, Predictive Modeling", icon: "⚙️" },
+    { id: "01.", title: "Data Management & Excel", description: "Organising records, cleaning data, and building accurate, easy-to-use Excel reports and trackers.", icon: "📊" },
+    { id: "02.", title: "Reporting & KPI Tracking", description: "Power BI, Tableau, and Looker Studio dashboards that turn raw numbers into decisions.", icon: "📈" },
+    { id: "03.", title: "Coordination & Support", description: "Cross-functional follow-ups, issue resolution, and keeping stakeholders aligned.", icon: "🤝" },
+    { id: "04.", title: "Problem-Solving Toolkit", description: "Python, SQL, and analytics used to dig into issues and prevent them from recurring.", icon: "🧠" },
 ];
 
 export default function Skills() {
@@ -27,7 +27,7 @@ export default function Skills() {
                     viewport={{ once: true }}
                     className="text-3xl md:text-5xl font-bold font-heading uppercase mb-16 text-dark-gray"
                 >
-                    Technical Skills
+                    Skills & Focus
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {skills.map((skill, index) => (

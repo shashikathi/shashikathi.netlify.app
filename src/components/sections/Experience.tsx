@@ -23,13 +23,13 @@ export default function Experience() {
                             viewport={{ once: true }}
                             className="border-l-2 border-gray-100 pl-8"
                         >
-                            <h3 className="text-2xl font-bold text-dark-gray">Operations Associate</h3>
-                            <p className="text-lg text-accent font-medium mb-2">Bhanzu</p>
+                            <h3 className="text-2xl font-bold text-dark-gray">Operations Associate Analyst</h3>
+                            <p className="text-lg text-accent font-medium mb-2">Bhanzu (EdTech)</p>
                             <p className="text-sm text-light-gray mb-4">Apr 2026 – Present</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Spearheading data-driven operational strategies, bridging the gap between business objectives and cross-functional execution pipelines.</li>
-                                <li>Monitoring and analyzing key operational metrics to streamline workflows, optimize resource allocation, and enhance reporting efficiency.</li>
-                                <li>Collaborating across teams to identify process bottlenecks, implementing automated solutions to maintain high data hygiene and accelerate task delivery.</li>
+                                <li>Organise and maintain student/operational records in Excel, keeping execution data accurate and up to date for reporting.</li>
+                                <li>Track and report on key operational metrics, surfacing KPIs clearly so teams can act on them quickly.</li>
+                                <li>Coordinate with relationship and training teams to resolve issues, follow up on escalations, and keep workflows moving.</li>
                             </ul>
                         </motion.div>
                         <motion.div
@@ -42,10 +42,10 @@ export default function Experience() {
                             <p className="text-lg text-accent font-medium mb-2">TransOrg Analytics | Remote</p>
                             <p className="text-sm text-light-gray mb-4">Jan 2025 – June 2025</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Built scalable Python/SQL ETL pipelines processing 10,000+ records, accelerating operational reporting speed by 30%.</li>
-                                <li>Engineered Machine Learning models for churn prediction and fraud detection, delivering actionable predictive insights.</li>
-                                <li>Executed comprehensive Exploratory Data Analysis (EDA) and data cleaning, enhancing data quality for downstream processes.</li>
-                                <li>Designed dynamic performance dashboards using Power BI and Looker Studio to visualize KPIs for stakeholder decision-making.</li>
+                                <li>Built data pipelines in Python and SQL processing 10,000+ records, cutting operational reporting time by 30%.</li>
+                                <li>Built ML models for churn and fraud detection, turning them into clear, actionable insights for stakeholders.</li>
+                                <li>Cleaned and structured data for accurate, decision-ready output used in day-to-day reporting.</li>
+                                <li>Designed KPI dashboards in Power BI and Looker Studio so teams could track performance at a glance.</li>
                             </ul>
                         </motion.div>
                         <motion.div
@@ -58,9 +58,9 @@ export default function Experience() {
                             <p className="text-lg text-accent font-medium mb-2">OASIS Student Organization | Punjab, India</p>
                             <p className="text-sm text-light-gray mb-4">Apr 2023 – Mar 2024</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Directed a cross-functional team of 15 members to successfully execute 10+ events for 500+ participants, achieving 100% on-time delivery.</li>
-                                <li>Managed vendor coordination, logistics, and internal protocols, improving overall operational efficiency by 25%.</li>
-                                <li>Led team onboarding and induction, accelerating ramp-up time via standardized role assignments and Standard Operating Procedures (SOPs).</li>
+                                <li>Led a cross-functional team of 15 to deliver 10+ events for 500+ participants, all on time.</li>
+                                <li>Handled vendor coordination, logistics, and protocols, improving operational efficiency by 25%.</li>
+                                <li>Onboarded new team members using standard role assignments and simple SOPs to get them up to speed faster.</li>
                             </ul>
                         </motion.div>
                     </div>

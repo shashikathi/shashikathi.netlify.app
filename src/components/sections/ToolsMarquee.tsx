@@ -4,19 +4,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const tools = [
-    { name: "Python", category: "Language", color: "from-blue-400 to-blue-600" },
-    { name: "SQL", category: "Database", color: "from-orange-400 to-orange-600" },
-    { name: "Power BI", category: "Visualization", color: "from-yellow-400 to-yellow-600" },
+    { name: "Excel", category: "Reporting", color: "from-green-500 to-green-700" },
+    { name: "SQL", category: "Data", color: "from-orange-400 to-orange-600" },
+    { name: "Power BI", category: "Reporting", color: "from-yellow-400 to-yellow-600" },
     { name: "Tableau", category: "Visualization", color: "from-blue-400 to-cyan-500" },
-    { name: "Excel", category: "Analysis", color: "from-green-500 to-green-700" },
-    { name: "Pandas", category: "Library", color: "from-purple-400 to-purple-600" },
-    { name: "NumPy", category: "Library", color: "from-indigo-400 to-indigo-600" },
-    { name: "Scikit-learn", category: "ML", color: "from-orange-500 to-red-500" },
-    { name: "Streamlit", category: "Framework", color: "from-red-500 to-red-600" },
-    { name: "Git", category: "Version Control", color: "from-gray-600 to-gray-800" },
-    { name: "Azure AI", category: "Cloud", color: "from-blue-500 to-blue-700" },
-    { name: "GCP", category: "Cloud", color: "from-red-400 to-yellow-400" },
-    { name: "Oracle Cloud", category: "Cloud", color: "from-red-500 to-red-700" },
+    { name: "Looker Studio", category: "Dashboard", color: "from-sky-400 to-blue-600" },
+    { name: "Python", category: "Data Analysis", color: "from-blue-400 to-blue-600" },
+    { name: "Pandas", category: "Data", color: "from-purple-400 to-purple-600" },
+    { name: "Google Sheets", category: "Collaboration", color: "from-green-400 to-emerald-600" },
+    { name: "KPI Tracking", category: "Process", color: "from-teal-400 to-teal-600" },
+    { name: "Issue Tracking", category: "Process", color: "from-indigo-400 to-indigo-600" },
+    { name: "NumPy", category: "Data", color: "from-indigo-400 to-indigo-600" },
+    { name: "AI Assistants", category: "Productivity", color: "from-rose-400 to-rose-600" },
 ];
 
 export default function ToolsMarquee() {
