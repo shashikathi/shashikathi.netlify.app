@@ -42,3 +42,8 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+/pixel-backup/node_modules/
+/pixel-backup/.next/
+/pixel-backup/out/
+/pixel-backup/.netlify/
+/pixel-backup/*.tsbuildinfo

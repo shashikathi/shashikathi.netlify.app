@@ -25,6 +25,7 @@ export default function Header() {
         { href: "#about", label: "About" },
         { href: "https://www.linkedin.com/in/shashikathi/", label: "LinkedIn", external: true },
         { href: "https://github.com/shashikathi", label: "GitHub", external: true },
+        { href: "/pixel", label: "Pixel theme" },
         { href: "#contact", label: "Contact" },
     ];
 
@@ -55,7 +56,7 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-dark-gray">
+                <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-dark-gray">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
@@ -83,7 +84,7 @@ export default function Header() {
                     {/* Desktop CTA Button */}
                     <Link
                         href="#contact"
-                        className="group relative flex items-center gap-2 px-3 md:px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-b from-[#3a4a5a] to-dark-gray text-white rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-black/5"
+                        className="hidden lg:flex group relative items-center gap-2 px-3 md:px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-b from-[#3a4a5a] to-dark-gray text-white rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-black/5"
                     >
                         <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-accent to-dark-gray"
@@ -104,7 +105,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-expanded={isMobileMenuOpen}
                         aria-label="Toggle navigation menu"
-                        className="md:hidden p-2 text-dark-gray hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent rounded-xl transition-colors duration-200"
+                        className="lg:hidden p-2 text-dark-gray hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent rounded-xl transition-colors duration-200"
                     >
                         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -119,7 +120,7 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="fixed inset-x-4 top-24 z-40 md:hidden bg-white/95 backdrop-blur-[20px] rounded-3xl p-6 shadow-2xl border border-gray-100 flex flex-col gap-4 text-center"
+                        className="fixed inset-x-4 top-24 z-40 lg:hidden bg-white/95 backdrop-blur-[20px] rounded-3xl p-6 shadow-2xl border border-gray-100 flex flex-col gap-4 text-center"
                     >
                         {navLinks.map((link) => (
                             <Link

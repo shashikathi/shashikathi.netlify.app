@@ -27,9 +27,10 @@ export default function Experience() {
                             <p className="text-lg text-accent font-medium mb-2">Bhanzu (EdTech)</p>
                             <p className="text-sm text-light-gray mb-4">Apr 2026 – Present</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Organise and maintain student/operational records in Excel, keeping execution data accurate and up to date for reporting.</li>
-                                <li>Track and report on key operational metrics, surfacing KPIs clearly so teams can act on them quickly.</li>
-                                <li>Coordinate with relationship and training teams to resolve issues, follow up on escalations, and keep workflows moving.</li>
+                                <li>Prepare recurring and ad hoc Excel reports for KPIs, case status, pending actions, and execution priorities.</li>
+                                <li>Built a Salesforce Lightning view for turnaround targets, case ownership, resolution time, and open workload.</li>
+                                <li>Automated a trainer-capacity and hiring-planning report, reducing preparation from 45–60 minutes to about 15.</li>
+                                <li>Support staffing decisions with availability and utilization analysis, and document workflows through SOPs.</li>
                             </ul>
                         </motion.div>
                         <motion.div
@@ -42,10 +43,10 @@ export default function Experience() {
                             <p className="text-lg text-accent font-medium mb-2">TransOrg Analytics | Remote</p>
                             <p className="text-sm text-light-gray mb-4">Jan 2025 – June 2025</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Built data pipelines in Python and SQL processing 10,000+ records, cutting operational reporting time by 30%.</li>
-                                <li>Built ML models for churn and fraud detection, turning them into clear, actionable insights for stakeholders.</li>
-                                <li>Cleaned and structured data for accurate, decision-ready output used in day-to-day reporting.</li>
-                                <li>Designed KPI dashboards in Power BI and Looker Studio so teams could track performance at a glance.</li>
+                                <li>Contributed to data workflows for transaction analysis and recurring operational reporting.</li>
+                                <li>Standardized KPI definitions and added structured data-quality checks.</li>
+                                <li>Developed a customer-churn workflow and translated findings into stakeholder-facing dashboards.</li>
+                                <li>Built fraud-monitoring visualizations to support anomaly review and operational decisions.</li>
                             </ul>
                         </motion.div>
                         <motion.div
@@ -58,9 +59,9 @@ export default function Experience() {
                             <p className="text-lg text-accent font-medium mb-2">OASIS Student Organization | Punjab, India</p>
                             <p className="text-sm text-light-gray mb-4">Apr 2023 – Mar 2024</p>
                             <ul className="list-disc list-inside space-y-2 text-dark-gray/80">
-                                <li>Led a cross-functional team of 15 to deliver 10+ events for 500+ participants, all on time.</li>
-                                <li>Handled vendor coordination, logistics, and protocols, improving operational efficiency by 25%.</li>
-                                <li>Onboarded new team members using standard role assignments and simple SOPs to get them up to speed faster.</li>
+                                <li>Coordinated a 15-member team across 10+ initiatives using delegated tasks and milestone tracking.</li>
+                                <li>Managed event logistics, vendor coordination, and protocols for large student programs.</li>
+                                <li>Introduced SOPs and resource-allocation practices that contributed to a reported 25% improvement in team efficiency.</li>
                             </ul>
                         </motion.div>
                     </div>
@@ -85,7 +86,7 @@ export default function Experience() {
                         >
                             <h3 className="text-2xl font-bold text-dark-gray">Bachelor of Technology (Honors)</h3>
                             <p className="text-lg text-accent font-medium mb-2">Lovely Professional University, Punjab</p>
-                            <p className="text-sm text-light-gray mb-4">Aug 2021 – Aug 2025</p>
+                            <p className="text-sm text-light-gray mb-4">2021 – 2025</p>
                             <p className="text-dark-gray/80">Computer Science, Data Science & Data Engineering</p>
                             <p className="text-sm text-light-gray mt-2">Awarded 50% merit scholarship (AIR under 500)</p>
                         </motion.div>
@@ -104,10 +105,11 @@ export default function Experience() {
                     </motion.h2>
                     <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {[
-                            "McKinsey Forward Program | McKinsey & Company",
-                            "Oracle Cloud Infrastructure 2025 Data Science Professional | Oracle",
-                            "Looker Studio Certification | Google",
-                            "Google Cloud: Introduction to Data Analytics | Google",
+                            "AI Fluency Framework & Foundations | Anthropic | 2026",
+                            "McKinsey Forward Program | McKinsey & Company | 2025",
+                            "Introduction to Data Science | Cisco | 2025",
+                            "Oracle Cloud Infrastructure Data Science Professional | 2025",
+                            "Introduction to Data Analytics | Google Cloud | 2025",
                         ].map((cert, index) => (
                             <motion.div
                                 key={index}

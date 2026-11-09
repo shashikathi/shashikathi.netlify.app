@@ -1,48 +1,20 @@
-# Shashi Kathi - Portfolio
+# Shashi Kathi Portfolio
 
-Portfolio website for Shashi Kathi, a Data Analyst specializing in Python, SQL, and Predictive Modeling.
+The existing light portfolio remains the default experience. Use the **Pixel theme** link in the navigation to switch to the pixel-art edition at `/pixel`; choose **Original theme** there to switch back.
 
-Live at: [https://shashikathi.netlify.app/](https://shashikathi.netlify.app/)
+Both experiences use the updated seaside portrait, résumé link, experience and project details, and appointment calendar. The full standalone pixel edition is also included in `pixel-backup` for an independent Netlify deployment.
 
-## Tech Stack
-
-- **Framework**: Next.js 16
-- **Styling**: Tailwind CSS 4
-- **Animations**: Framer Motion
-- **Smooth Scroll**: Lenis
-- **Deployment**: Netlify
-
-## Getting Started
-
-First, install dependencies:
+## Run locally
 
 ```bash
 npm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy the main site
 
-## Features
+The root project exports a static Next.js site to `out` for Netlify.
 
-- ✅ Responsive design optimized for all devices
-- ✅ iOS device compatibility with safe area insets
-- ✅ Smooth animations and transitions
-- ✅ Interactive portfolio sections
-- ✅ Contact form
-- ✅ LinkedIn integration
+## Deploy the pixel backup separately
 
-## Deployment
-
-This project is deployed on Netlify. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
-
-## Learn More
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Framer Motion Documentation](https://www.framer.com/motion/)
+In Netlify, set the base directory to `pixel-backup`, the build command to `npm run build`, and the publish directory to `out`. The backup folder contains its own app files, config, package manifest, and assets.

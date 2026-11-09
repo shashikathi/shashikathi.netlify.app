@@ -7,20 +7,20 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const antonio = Antonio({ subsets: ["latin"], variable: "--font-antonio" });
 
 export const metadata: Metadata = {
-  title: "Shashi Kathi | Operations Associate Analyst",
-  description: "Operations Associate Analyst at Bhanzu. Skilled in data management, Excel-based reporting, KPI tracking, and cross-functional coordination in EdTech.",
+  title: "Shashi Kathi (Preetham) | Operations & Analytics",
+  description: "I'm Shashi Kathi, known as Preetham. I work across business operations, reporting, analytics, and process improvement.",
   metadataBase: new URL("https://shashikathi.netlify.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Shashi Kathi | Operations Associate Analyst",
-    description: "Operations Associate Analyst at Bhanzu. Skilled in data management, Excel-based reporting, KPI tracking, and cross-functional coordination in EdTech.",
+    title: "Shashi Kathi (Preetham) | Operations & Analytics",
+    description: "I'm Shashi Kathi, known as Preetham. I work across business operations, reporting, analytics, and process improvement.",
     url: "https://shashikathi.netlify.app",
     siteName: "Shashi Kathi Portfolio",
     images: [
       {
-        url: "/profile.png",
+        url: "/preetham-portrait.webp",
         width: 800,
         height: 800,
         alt: "Shashi Kathi Profile Photo",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shashi Kathi | Operations Associate Analyst",
-    description: "Operations Associate Analyst at Bhanzu. Skilled in data management, Excel-based reporting, KPI tracking, and cross-functional coordination in EdTech.",
-    images: ["/profile.png"],
+    title: "Shashi Kathi (Preetham) | Operations & Analytics",
+    description: "I'm Shashi Kathi, known as Preetham. I work across business operations, reporting, analytics, and process improvement.",
+    images: ["/preetham-portrait.webp"],
   },
 };
 

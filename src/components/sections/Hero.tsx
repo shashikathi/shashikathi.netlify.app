@@ -115,7 +115,7 @@ export default function Hero() {
                             Operations Associate Analyst
                         </motion.p>
                         <motion.a
-                            href="https://drive.google.com/drive/folders/1YvHlx6K3aNXhGODY2etrAIk6FUIamzpd"
+                            href="https://drive.google.com/file/d/16w-7QXuVxu5igqtdtB2SeTt_WsK3DOPE/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             initial={{ opacity: 0, x: -20 }}
@@ -147,10 +147,10 @@ export default function Hero() {
                         className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100 shadow-2xl will-change-transform"
                     >
                         <Image
-                            src="/profile.png"
+                            src="/preetham-portrait.webp"
                             alt="Shashi Kathi"
                             fill
-                            className="object-cover object-top"
+                            className="object-cover object-[50%_58%]"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                         />

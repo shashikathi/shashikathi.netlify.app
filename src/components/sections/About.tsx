@@ -6,11 +6,11 @@ import { useId, useState } from "react";
 import LinkedInBadge from "../ui/LinkedInBadge";
 
 const preview =
-    "I'm Shashi, an Operations Associate Analyst at Bhanzu. I help keep day-to-day operations running smoothly by organising data properly, building clear reports, and making sure things don't fall through the cracks.";
+    "I'm Shashi Kathi — friends call me Preetham. I work where operations and data meet, making reporting easier to trust, processes easier to follow, and day-to-day work easier to act on.";
 
 const moreContent = [
-    "My day-to-day is about the small things that make operations work: accurate records, clean Excel sheets, KPI reports people can actually act on, and quick follow-ups when something goes wrong. I'm comfortable switching between helping a team member, sorting out an escalated request, and re-prioritising when a shift changes.",
-    "I got here through a data science background and real cross-functional work — coordinating events, tracking numbers, and solving problems without waiting to be asked. For me, good operations is less about fancy tools and more about accuracy, clear communication, and caring about the customer on the other end.",
+    "In my current role at Bhanzu, I support operations with KPI reporting, case visibility, process documentation, and practical automation. I enjoy finding the root of a problem and building a simple workflow the team can keep using.",
+    "My background spans operations, analytics, and coordination: from a data science internship at TransOrg to leading a 15-person OASIS team across 10+ initiatives. I value accuracy, clear communication, and work that makes the next step easier.",
 ];
 
 export default function About() {

@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const stats = [
-    { label: "Events Delivered", value: 10, suffix: "+", description: "Coordinate logistics with 500+ participants" },
-    { label: "Records Processed", value: 10, suffix: "K+", description: "Across reporting and data pipelines" },
-    { label: "Faster Reporting", value: 30, suffix: "%", description: "From cleaner, structured data" },
-    { label: "Team Coordinated", value: 15, suffix: "+", description: "Cross-functional collaboration & onboarding" },
+    { label: "Time to prepare a report", value: 15, suffix: " min", description: "Down from 45–60 minutes after automation" },
+    { label: "Customer records analyzed", value: 10, suffix: "K+", description: "In a customer-churn analysis project" },
+    { label: "Model accuracy", value: 85, suffix: "%+", description: "Reported by the churn prediction project" },
+    { label: "Team coordinated", value: 15, suffix: "+", description: "Across 10+ OASIS initiatives" },
 ];
 
 export default function Stats() {
