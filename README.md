@@ -1,6 +1,6 @@
 # Shashi Kathi Portfolio
 
-The existing light portfolio remains the default experience. Use the **Pixel theme** link in the navigation to switch to the pixel-art edition at `/pixel`; choose **Original theme** there to switch back.
+The existing white portfolio remains the default experience. Use the **Black theme** link in the navigation to switch to the pixel-art edition at `/pixel`; choose **White theme** there to switch back.
 
 Both experiences use the updated seaside portrait, résumé link, experience and project details, and appointment calendar. The full standalone pixel edition is also included in `pixel-backup` for an independent Netlify deployment.
 

@@ -25,7 +25,7 @@ export default function Header() {
         { href: "#about", label: "About" },
         { href: "https://www.linkedin.com/in/shashikathi/", label: "LinkedIn", external: true },
         { href: "https://github.com/shashikathi", label: "GitHub", external: true },
-        { href: "/pixel", label: "Pixel theme" },
+        { href: "/pixel", label: "Black theme" },
         { href: "#contact", label: "Contact" },
     ];
 

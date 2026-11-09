@@ -8,7 +8,7 @@ const navigation = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Work", href: "#projects" },
-  { label: "Original theme", href: "/" },
+  { label: "White theme", href: "/" },
 ];
 
 export default function Header() {

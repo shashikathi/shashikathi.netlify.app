@@ -1,6 +1,6 @@
 # Pixel Portfolio Backup
 
-A standalone Next.js version of the pixel-art portfolio. The main repository keeps the original visual design and offers the pixel version at `/pixel`.
+A standalone Next.js version of the black pixel-art portfolio. The main repository keeps the white visual design at `/` and offers the black version at `/pixel`.
 
 ## Run locally
 

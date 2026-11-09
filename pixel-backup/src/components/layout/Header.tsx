@@ -8,7 +8,7 @@ const navigation = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Work", href: "#projects" },
-  { label: "Original theme", href: "https://shashikathi.netlify.app/", external: true },
+  { label: "White theme", href: "https://shashikathi.netlify.app/", external: true },
 ];
 
 export default function Header() {
